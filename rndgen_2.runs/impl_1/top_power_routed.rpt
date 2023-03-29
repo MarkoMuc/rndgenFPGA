@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date             : Thu Mar 30 00:06:46 2023
+| Date             : Thu Mar 30 01:01:43 2023
 | Host             : DESKTOP-S33IK5F running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.103        |
+| Total On-Chip Power (W)  | 0.102        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.006        |
+| Dynamic (W)              | 0.005        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.5         |
@@ -53,16 +53,16 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |      344 |       --- |             --- |
-|   LUT as Logic |    <0.001 |      156 |     63400 |            0.25 |
-|   Register     |    <0.001 |      135 |    126800 |            0.11 |
+| Slice Logic    |    <0.001 |      368 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       98 |     63400 |            0.15 |
+|   Register     |    <0.001 |      221 |    126800 |            0.17 |
 |   CARRY4       |    <0.001 |       13 |     15850 |            0.08 |
 |   BUFG         |    <0.001 |        1 |        32 |            3.13 |
 |   Others       |     0.000 |       11 |       --- |             --- |
-| Signals        |    <0.001 |      286 |       --- |             --- |
-| I/O            |     0.004 |        9 |       210 |            4.29 |
+| Signals        |    <0.001 |      315 |       --- |             --- |
+| I/O            |     0.003 |        9 |       210 |            4.29 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.103 |          |           |                 |
+| Total          |     0.102 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -141,7 +141,7 @@ Table of Contents
 +------+-----------+
 | Name | Power (W) |
 +------+-----------+
-| top  |     0.006 |
+| top  |     0.005 |
 +------+-----------+
 
 

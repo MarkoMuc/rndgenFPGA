@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Thu Mar 30 00:06:03 2023
+| Date         : Thu Mar 30 01:01:00 2023
 | Host         : DESKTOP-S33IK5F running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    12 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    49 |
+| Unused register locations in slices containing registers |    51 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -42,12 +42,12 @@ Table of Contents
 | Total control sets |    12 |
 | >= 0 to < 4        |     3 |
 | >= 4 to < 6        |     0 |
-| >= 6 to < 8        |     2 |
+| >= 6 to < 8        |     1 |
 | >= 8 to < 10       |     1 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     2 |
 | >= 14 to < 16      |     1 |
-| >= 16              |     3 |
+| >= 16              |     4 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,10 +58,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              41 |           15 |
+| No           | No                    | No                     |              41 |           13 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              51 |           14 |
-| Yes          | No                    | No                     |              21 |            8 |
+| No           | Yes                   | No                     |              51 |           13 |
+| Yes          | No                    | No                     |             107 |           27 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |              22 |            5 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -73,18 +73,18 @@ Table of Contents
 +----------------------+-----------------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
 |     Clock Signal     |                          Enable Signal                          |                    Set/Reset Signal                    | Slice Load Count | Bel Load Count | Bels / Slice |
 +----------------------+-----------------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
-|  clk4mhz_BUFG        | spi_inst/cs_i_1_n_0                                             |                                                        |                1 |              1 |         1.00 |
-|  clk4mhz_BUFG        | spi_inst/mosi_i_1_n_0                                           |                                                        |                1 |              1 |         1.00 |
 |  CLK100MHZ_IBUF_BUFG | data_transmit/send_byte/controller/shr_en                       | data_transmit/send_byte/controller/write_data_reg_1    |                1 |              1 |         1.00 |
-|  CLK100MHZ_IBUF_BUFG |                                                                 | data_transmit/send_byte/controller/in1                 |                2 |              6 |         3.00 |
-|  clk4mhz_BUFG        | spi_inst/FSM_sequential_state[6]_i_1_n_0                        |                                                        |                3 |              7 |         2.33 |
+|  clk4mhz_BUFG        | spi_inst/mosi_i_1_n_0                                           |                                                        |                1 |              1 |         1.00 |
+|  clk4mhz_BUFG        | spi_inst/cs_i_1_n_0                                             |                                                        |                1 |              1 |         1.00 |
+|  CLK100MHZ_IBUF_BUFG |                                                                 | data_transmit/send_byte/controller/in1                 |                1 |              6 |         6.00 |
 |  CLK100MHZ_IBUF_BUFG | data_transmit/send_byte/controller/shr_en_reg_0                 | data_transmit/send_byte/controller/in1                 |                2 |              9 |         4.50 |
-| ~clk4mhz_BUFG        | spi_inst/latch_data                                             |                                                        |                3 |             12 |         4.00 |
 |  CLK100MHZ_IBUF_BUFG | data_transmit/send_byte/controller/FSM_onehot_state[11]_i_2_n_0 | data_transmit/send_byte/controller/in1                 |                2 |             12 |         6.00 |
+| ~clk4mhz_BUFG        | spi_inst/latch_data                                             |                                                        |                2 |             12 |         6.00 |
 |  CLK100MHZ_IBUF_BUFG |                                                                 | data_transmit/send_byte/baud_rate_gen/value[0]_i_1_n_0 |                4 |             14 |         3.50 |
-|  clk4mhz_BUFG        |                                                                 |                                                        |                7 |             16 |         2.29 |
+|  clk4mhz_BUFG        |                                                                 |                                                        |                5 |             16 |         3.20 |
 |  CLK100MHZ_IBUF_BUFG |                                                                 |                                                        |                8 |             25 |         3.12 |
 |  clk4mhz_BUFG        |                                                                 | spi_inst/counter[31]_i_1_n_0                           |                8 |             31 |         3.88 |
+|  clk4mhz_BUFG        | spi_inst/FSM_onehot_state[92]_i_1_n_0                           |                                                        |               23 |             93 |         4.04 |
 +----------------------+-----------------------------------------------------------------+--------------------------------------------------------+------------------+----------------+--------------+
 
 
