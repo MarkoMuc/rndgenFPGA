@@ -1,6 +1,14 @@
 ----------------------------------------------------------------------------------
 -- Spi Master communicates with the ADXL362
 
+    -- 1. phase :
+        -- standby for 6ns after powerup
+        -- send write command, PCR address and Mode
+        -- wait 40 ns -> 2.phase
+    -- 2. phase :
+        -- send read command, X address, read 6Bytes of X,Y,Z data
+        -- wait 10ns, repeat
+
 -- SCLK : 1MHz
 ----------------------------------------------------------------------------------
 
@@ -48,10 +56,13 @@ architecture Behavioral of spi_master is
         
         -- Setting up measurment mode, preparing for data read
         cs_low, 
+        
         write_cmd1, write_cmd2, write_cmd3, write_cmd4, write_cmd5, write_cmd6, write_cmd7, write_cmd8,
         write_pcr1, write_pcr2, write_pcr3, write_pcr4, write_pcr5, write_pcr6, write_pcr7, write_pcr8,
         write_mode1, write_mode2, write_mode3, write_mode4, write_mode5, write_mode6, write_mode7, write_mode8,
+       
         wait_40,
+        
         -- Reading data in loop
         read_low,
         read_cmd1, read_cmd2, read_cmd3, read_cmd4, read_cmd5, read_cmd6, read_cmd7, read_cmd8,
@@ -65,16 +76,15 @@ architecture Behavioral of spi_master is
 
         read_zdata1, read_zdata2, read_zdata3, read_zdata4, read_zdata5, read_zdata6, read_zdata7, read_zdata8,
         read_z2data1, read_z2data2, read_z2data3, read_z2data4, read_z2data5, read_z2data6, read_z2data7, read_z2data8,
-        wait_10
-
         
+        wait_10
         );
     
-    signal state : allStates := power_up;
-    signal counter : integer := 0;
-    signal sclk_control : std_logic := '0';
+    signal state : allStates := power_up; -- start state
+    signal counter : integer := 0; -- 4000 ticks per ms
+    signal sclk_control : std_logic := '0'; -- turns sclk on/off
     
-    signal sclk_counter : std_logic := '0';
+    signal sclk_counter : std_logic := '0'; -- generates sclk
     signal sclk_reg: std_logic := '0'; -- SCLK
     
     -- DATA
@@ -90,7 +100,7 @@ architecture Behavioral of spi_master is
     signal latch_data: std_logic := '0';
 begin
     
-    --SCLK
+    --SCLK -> 1MHz: 4*10^6 / 1*10^6 /2 = 2 
     sclk_gen : process(clk)
     begin
         if rising_edge(clk) then 
@@ -102,7 +112,7 @@ begin
     end process;
 
     
-    -- wait 5 ms, then 
+   
     machine : process(clk, state)
     begin
         if rising_edge(clk) then
@@ -111,7 +121,7 @@ begin
     --SET UP
                when power_up =>
                     -- waits 5ms for power up
-                    if counter = 23999 then
+                    if counter = 23999 then    -- 4000 * 6 = 24 000 => 6ns
                         state <= cs_low;
                     end if;
                when cs_low =>
@@ -119,16 +129,20 @@ begin
                     if counter = 24001 then
                         state <= write_cmd1;
                         cs <= '1';
-                    end if;
-               -- Sends write command
+                    end if;  
+             -- Sends write command
                when write_cmd1 =>
-                    sclk_control <= '1'; --24003
-                    mosi <= WRITECMD(7);
+                    if counter = 24003
+                    then sclk_control <= '1'; --24003
+                        mosi <= WRITECMD(7);
+                    end if;
+                    
                     if counter = 24005
                     then state <= write_cmd2;
                     end if;
                when write_cmd2 =>
-                    mosi <= WRITECMD(6);
+                    
+                    if countermosi <= WRITECMD(6);
                     if counter = 24009
                     then state <= write_cmd3;
                     end if;
@@ -259,9 +273,11 @@ begin
                     
                 -- Set CS to low
                 when read_low => 
-                    sclk_control <= '1';
-                    cs <= '0';
-                    state <= read_cmd1;
+                    if counter = 1 then
+                        sclk_control <= '1';
+                        cs <= '0';
+                        state <= read_cmd1;
+                    end if;
                 -- Send Read Command
                 when read_cmd1 =>
                     mosi <= READCMD(7);
@@ -299,7 +315,7 @@ begin
                     then state <= read_cmd8;
                     end if;
                 when read_cmd8 =>
-                    mosi <= READCMD(1);
+                    mosi <= READCMD(0);
                     if counter = 32 
                     then state <= read_adr1;
                     end if;

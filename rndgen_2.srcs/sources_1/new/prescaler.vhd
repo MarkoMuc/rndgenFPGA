@@ -1,6 +1,9 @@
 ----------------------------------------------------------------------------------
--- Generic prescaler
--- In clk : 100Mhz
+-- Prescaler
+-- In clock : 100Mhz
+-- out clock: 4Mhz
+
+-- 100 * 10^6 / 4 * 10^6 = 25
 ----------------------------------------------------------------------------------
 
 
@@ -25,10 +28,10 @@ end prescaler;
 
 architecture Behavioral of prescaler is
     signal count : unsigned(7 downto 0):= (others => '0');
-    signal cs_internal : std_logic := '0';
+    signal cs_internal : std_logic := '1';
 begin
-   cs <= cs_internal;
-   
+
+   cs <= cs_internal;   
    prescale : process(CLK100MHZ)
     begin
         if rising_edge(CLK100MHZ) then
@@ -36,7 +39,7 @@ begin
                cs_internal <= NOT(cs_internal);
                 count <= count + 1;
             elsif count = 24 then
-               cs_internal <= '1';
+               cs_internal <= NOT(cs_internal);
                count <= (others => '0');
             else
                 count <= count + 1;

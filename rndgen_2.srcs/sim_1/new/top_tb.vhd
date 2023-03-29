@@ -40,6 +40,9 @@ architecture Behavioral of top_tb is
 component top is
     Port (
         CLK100MHZ : in std_logic;
+        CPU_RESETN : in STD_LOGIC;
+        BTNC : in STD_LOGIC;
+        UART_RXD_OUT : out STD_LOGIC;
         LED : out std_logic;
         ACL_MISO : in std_logic;
         ACL_MOSI: out std_logic;
@@ -49,13 +52,15 @@ end component;
 
 constant clock_period : time := 10ns;
 
-signal clock, led, miso,mosi,sclk,csn : std_logic := '0';
+signal clock, led, miso,mosi,sclk,csn,reset,btn : std_logic := '0';
 
 begin
     UUT: top
     port map(
         CLK100MHZ => clock,
         LED => led,
+        CPU_RESETN => reset,
+        BTNC => btn,
         ACL_MISO => miso,
         ACL_MOSI => mosi,
         ACL_SCLK => sclk,
@@ -74,7 +79,7 @@ begin
     stimuli: process
     begin
         -- initialize
-        miso <= '0';
+        miso <= '1';
         wait for clock_period * 10;
         miso <= '1';
         wait for clock_period * 10;
