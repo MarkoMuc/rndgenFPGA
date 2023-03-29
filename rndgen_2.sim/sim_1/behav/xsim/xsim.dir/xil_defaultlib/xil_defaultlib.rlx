@@ -1,0 +1,14 @@
+0.7
+2020.2
+Oct 14 2022
+05:20:55
+D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sim_1/new/prescaler_tb.vhd,1680100354,vhdl,,,,prescaler_tb,,,,,,,,
+D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sim_1/new/top_tb.vhd,1680099876,vhdl,,,,top_tb,,,,,,,,
+D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/UART_controller.vhd,1680114544,vhdl,D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/data_transmit.vhd,,,uart_controller,,,,,,,,
+D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/data_transmit.vhd,1680120256,vhdl,D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/top.vhd,,,data_transmit,,,,,,,,
+D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/prescaler.vhd,1680104802,vhdl,,,,prescaler,,,,,,,,
+D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/prescaleruart.vhd,1680113924,vhdl,D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/UART_controller.vhd,,,prescaleruart,,,,,,,,
+D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/shift_register.vhd,1680113974,vhdl,D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/UART_controller.vhd,,,shift_register,,,,,,,,
+D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/spi_master.vhd,1680116082,vhdl,,,,spi_master,,,,,,,,
+D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/top.vhd,1680120216,vhdl,,,,top,,,,,,,,
+D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/tx_controller.vhd,1680114911,vhdl,D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/UART_controller.vhd,,,tx_control,,,,,,,,

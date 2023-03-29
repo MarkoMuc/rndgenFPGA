@@ -1,0 +1,14 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/prescaleruart.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'prescaleruart'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/shift_register.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'shift_register'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/tx_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'tx_control'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/UART_controller.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'UART_controller'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/data_transmit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'data_transmit'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/spi_master.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'spi_master'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/DESKTOPMA/CODE/Vivado/rndgen_2/rndgen_2.srcs/sources_1/new/top.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'top'

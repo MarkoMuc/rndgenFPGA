@@ -1,0 +1,14 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../rndgen_2.srcs/sources_1/new/prescaleruart.vhd" \
+"../../../../rndgen_2.srcs/sources_1/new/shift_register.vhd" \
+"../../../../rndgen_2.srcs/sources_1/new/tx_controller.vhd" \
+"../../../../rndgen_2.srcs/sources_1/new/UART_controller.vhd" \
+"../../../../rndgen_2.srcs/sources_1/new/data_transmit.vhd" \
+"../../../../rndgen_2.srcs/sources_1/new/prescaler.vhd" \
+"../../../../rndgen_2.srcs/sources_1/new/spi_master.vhd" \
+"../../../../rndgen_2.srcs/sources_1/new/top.vhd" \
+"../../../../rndgen_2.srcs/sim_1/new/top_tb.vhd" \
+
+# Do not sort compile order
+nosort
